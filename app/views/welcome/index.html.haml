@@ -1,3 +1,4 @@
+
 %h1=t("hello")
 /
   - if current_user
@@ -15,10 +16,11 @@
 
 #campaign-view.modal.fade
 
-
-- @campaigns.each do |campaign|
-  .well
-    %h4= campaign.title
-    %p= campaign.details.truncate(50)
-    %p= link_to "View", "javascript:void(0);"
-    %p= link_to "View", campaign, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#campaign-view"}
+.container{style: "position:relative;"}
+  - @campaigns.each do |campaign|
+    .col-lg-3.col-md-3.col-sm-4.col-xs-6
+      .profile-well
+        %h4= campaign.title
+        %p= campaign.details.truncate(50)
+        %p= link_to "View", "javascript:void(0);"
+        %p= link_to "View", campaign, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#campaign-view"}

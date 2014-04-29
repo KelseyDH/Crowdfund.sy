@@ -5,6 +5,10 @@
     .modal-body
       %p
         Details: #{@campaign.details}
-        Target: #{@campaign.target}
+        %br
+        Target: $#{@campaign.target}
+        %br
+        Campaign Finishes: #{@campaign.end_date}
+
     .modal-footer
       %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
