@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title CrowdFunding
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      .nav.nav-bar
+        .col-xs-6.col-md-6
+          %h1 Crowdfund.sy!
+        .col-xs-6.col-md-6
+          %br
+          .pull-right
+            #signin-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}= render "/layouts/signin_modal" unless current_user
+            #user-info= render "layouts/user_info"
+            (
+            = link_to_unless_current "English", locale: "en"
+            |
+            = link_to_unless_current "Spanish", locale: "es"
+            )
+      %hr
+      #flash-messages= flash_messages
+      = yield

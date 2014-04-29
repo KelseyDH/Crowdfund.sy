@@ -1,0 +1,10 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %h3= @campaign.title
+    .modal-body
+      %p
+        Details: #{@campaign.details}
+        Target: #{@campaign.target}
+    .modal-footer
+      %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close

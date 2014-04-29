@@ -1,0 +1,6 @@
+= simple_form_for @campaign, html: {class: "form-horizontal"} do |f|
+  = f.input :title
+  = f.input :details
+  = f.input :target
+  = f.input :end_date
+  = f.submit "Submit", class: "btn btn-primary"

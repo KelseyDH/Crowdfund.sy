@@ -1,0 +1,24 @@
+%h1=t("hello")
+/
+  - if current_user
+    = current_user.full_name #note use of delegate here
+    = link_to "logout", logout_path, class: "btn btn-default", method: :delete
+  - else
+    /= link_to "Sign in", login_path, class: "btn btn-default"
+    //Below would be used for multi-language support:
+    /= link_to t("buttons.signin"), login_path, class: "btn btn-default"
+    /= link_to "Sign up", signup_path, class: "btn btn-default"
+
+
+= link_to "New Campaign", new_campaign_path, class: "btn btn-primary"
+%br
+
+#campaign-view.modal.fade
+
+
+- @campaigns.each do |campaign|
+  .well
+    %h4= campaign.title
+    %p= campaign.details.truncate(50)
+    %p= link_to "View", "javascript:void(0);"
+    %p= link_to "View", campaign, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#campaign-view"}

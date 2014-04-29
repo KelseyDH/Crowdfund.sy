@@ -1,0 +1,13 @@
+= simple_form_for "", url: login_path, html: {class: "form-horizontal"}, remote: true do |f|
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} &#215;
+        %h4#myModalLabel.modal-title Sign In
+      .modal-body
+        = flash_messages if flash[:alert]
+        = f.input :email
+        = f.input :password
+      .modal-footer
+        = f.submit "Sign in", class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
