@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'thin'
 gem 'haml-rails'
 gem 'quiet_assets'
@@ -8,6 +7,17 @@ gem 'bootstrap-sass'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'will_paginate-bootstrap'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'faker'
+  gem "factory_girl_rails"
+  gem "capybara"
+  # gem "capybara-webkit"
+  gem 'selenium-webdriver', '~> 2.41.0'
+  gem "database_cleaner"
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
