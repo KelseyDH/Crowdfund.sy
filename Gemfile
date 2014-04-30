@@ -8,6 +8,7 @@ gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'will_paginate-bootstrap'
+gem 'state_machine'
 
 group :development, :test do
   gem 'rspec-rails'

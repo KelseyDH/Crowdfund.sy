@@ -1,0 +1,815 @@
+exit
+q
+q.title
+q = Question.new
+q.title
+q.persisted?
+q.save
+q
+q.title = "hello world"
+q
+q.save
+q.new
+q.title = "not hello world"
+q
+q.save
+q2 = Question.new
+Question.all
+Questions.all
+Question.create(title: "watch the world burn", description: "daaaaaaamn")
+q = Question.new(title:"blaaaaaaaah", body: "hel")
+q = Question.new(title:"blaaaaaaaah", description: "hel")
+reload!
+q = Question.new
+q.save
+q.errors
+reload!
+q.errors
+q = Question.new(title: "abc")
+q2 = Question.new(title: "abc")
+q.save
+q2.save
+Reload!
+reload!
+q.error
+q.save
+q3 = Question.new
+q3 = Question.new
+reload!
+q3 = Question.new
+q3 = Question.new(description: "hello")
+q = Question.find 100
+q = Question.find 100
+q3 = Question.new(description: "hello")
+q.update_attributes(title: "some new title", description: "some new description")
+q.destroy
+Question.find_by_title "abc"
+q = Question.new(title: "abc")
+q4 = Question.new(title: "abc")
+q.save
+q4.save
+q4.update_attributes(title: "cdefg")
+q4.update_attribute(title: "cdefg")
+q4.update_attributes(title: "cdefg")
+q4.save
+reload!
+Hirb.enable
+hirb.enable
+exit
+Question.all
+Question.select(:id, :title, :description).limit(2)
+Question.select(:id, :title, :description)
+q4 = Question.new
+q4 = Question.new(title: "kelsey", description: "I am awesome.")
+q4.save
+Question.list
+Question.all
+Question.select(:id, :title, :description).limit(2).offset(2)
+Question.all
+reload!
+Question.all
+exit
+Question.all
+Question.where(title: "abc")
+Question.where.not(title: "abc")
+Question.where(["title like ?", "%fas%"])
+q8 = Question.new(title: "fasasdbfasdlfjke")
+q8.save
+q8 = Question.new(title: "fasasdbfasdlfjke", description: "I am greaaaat")
+q8.save
+q11 = Question.new(title: "fasasdbfasdlfjke", description: "fasscaaa great")
+q11.save
+q11 = Question.new(title: "sdbfasdlfjke", description: "fasscaaa great")
+q11.save
+Question.where(["title like ?", "%fas%"])
+q12 = Question.new(title: "sdbfasdlfjke", description: "fasscaaa great")
+q12.save
+q12 = Question.new(title: "dbfasdlfjke", description: "fascaaa great")
+q12.save
+Question.where(["title like ?", "%fas%"])
+Question.where(["title like ? OR description like ?", "%fas%"]).where([created_at > ?", 10.days.ago])
+Question.where(["title like ? OR description like ?", "%fas%", "%fas%"]).where(["created_at > ?", 10.days.ago])
+exit
+Question.recent(10)
+exit
+exit
+q15 = Question.new(title: "hello", description: "world")
+q15 = Question.new(title: "hello", description: "world")
+q15 = Question.new(title: "hello", description: "world")
+reload!
+q15 = Question.new(title: "hello", description: "world")
+q15 = Question.new(title: "hello", description: "world")
+exit
+q15 = Question.new(title: "helloooo", description: "worldd")
+exit
+q15 = Question.new(title: "helloooo", description: "worldd")
+q15 = Question.new(title: "helloooo", description: "worldd")
+reload!
+q15 = Question.new(title: "helloooo", description: "worldd")
+exit
+q15 = Question.new(title: "helloooo", description: "worldd")
+q15.save
+q15.update_attributes(title: "some new title", description: "some new description")
+q = Question.find 100
+Question.all
+reload!
+Question.all
+q21 = Question.new(title: "master chief", description: "alien slayer")
+q21.save
+reload!
+Question.all
+Question.all
+Question.all
+reload!
+Question.all
+reload!
+Question.all
+exit
+Question.all
+exit
+Question.all
+reload!
+Question.all
+exit
+Question.all
+reload!
+Question.all
+exit
+Question.all
+q22 = Question.new(title: "halo troll", description: "halo sucks")
+q22.save
+Question.all
+Question.recent_ten
+Question.recent(3)
+Question.scope
+Question.default_order
+Question.order
+Question.all
+doskey /history | clip
+doskey /history | clip
+exit
+hiringtest.rb
+hiringtest.rb
+hiringtest.rb
+exit
+exit
+q = Question.save
+q = Question.save(" ")
+exit
+q3 = Question.save
+q3 = Question.new
+q.errors
+exit
+Post.new("hello","hii!")
+steve = Post.new("hello","hii!")
+@post = Post.new("hello","hii!")
+exit
+answer
+Answer
+exit
+question.answers
+answer = question.answers.new
+question.answers << answer1
+exit
+exit
+question = Question.last
+question.answers
+answer1 = Answer.new
+answer1.body
+answer1.body = "hello"
+question.answers << answer1
+question.answers.where(body: "hello")
+q26 = Answer.new
+q24.body("hello")
+q24.body = "hello"
+answer2 = Answer.new
+answer2.body = "this is the text body"
+question.answers >> answer2
+answer2.body
+answer2.body = "this is the text body"
+question.answers << answer2
+q55 = Answer.new
+q55.body = "body test is here"
+question.answers << q55
+exit
+Question.first
+exit
+@question = Question.last
+@question.answers.ordered_by_creation
+exit
+Question.update_all(user_id: 1)
+Question.update_all(user_id: 1)
+Quest
+Question.all
+rails g migration add_user_references_to_questions user:references
+rails g migration add_user_references_to_question user:references
+exit
+["Art", "Science", "Technology", "Sports", "Travel", "Humor"].each { |x| Category.create(title: x)}
+["Art", "Science", "Technology", "Sports", "Travel", "Humor"].each { |x| Category.create(name: x)}
+Category.create(name: "Politics")
+c1 = Category.first
+c2 = Category.find 4
+q = Question.first
+q.categories << c1
+q.categories << c1
+q.categories << c1
+q = Question.all.sample
+c1 = Category.find 1
+c2 = Category find 2
+c2 = Category.find 2
+q.categories << c2
+q.categories
+Categorization.all
+category = Category.find 1
+category.questions
+question.categories
+Question.update_all(user_id: 1)
+exit
+Question.all
+Question.all.destroy
+Question.destroy.all
+User.all
+Question.update_all(user_id: 3)
+Category.all.map(&title)
+Category.all.map(&:title)
+Category.all
+Category.all.map(&:name)
+q = Question.first
+c1 = Category.first
+c1 = Category.find 2
+q.categories << c1
+q.categories
+Categorization.all
+exit
+exit
+q = Question.first
+c1 = Category.first
+q.categories << c1
+q2 = Question.find 2
+c1 = Category.first
+c1 = Category.find 2
+q.categories << c1
+q.categories << c2
+q.categories
+Categorization.all
+exit
+p = Project.new(title: "Student Orientation", description: "A portal for helping douglas students", due_date: "2014-04-15")
+Project.all
+Project.all
+Project.due_date
+c =Project.find(1)
+c.due_date
+c.due_date("2014-04-11")
+exit
+Task.new(title: "hello")
+rails g resources tasks projects:references
+rails g tasks projects:references
+rails g resource tasks project:references
+exit
+project.create_task(title: "hello world")
+project.tasks(title: "hello world")
+Task.new(title: "hello world")
+project.Task.new(title: "hello world")
+project.task.new(title: "hello world")
+Task.new(title: "hello world")
+exit
+Idea.all
+i = Idea.new(title: "Open a new gym!", description: "I love exercise!")
+Idea.all
+exit
+q = Idea.new(title: "hello world!", description: "This is kelsey!")
+q.save
+Idea.all
+exit
+c = idea.comments.new(body: "hello!")
+c = Comment.new(body: "comment!")
+c.save
+User.all
+user.find 1
+User.find 1
+User.all(name)
+User.all("name")
+User.all[name]
+User.all[1]
+c = @idea.comments.new(body: "hello!")
+c = idea.comments.new(body: "hello!")
+exit
+exit
+User.all
+c = User.find 1
+c
+c.name
+c.Name
+c.email
+c.name
+c.name("kelsey")
+c.name << kelsey
+c.name >> kelsey
+exit
+Rails.root
+exit
+["Ruby on Rails", "Javascript", "HTML/CSS", "Node.js", "Scala", "Java"].each {|x| Skill.create(title: x)}
+["Ruby on Rails", "Javascript", "HTML/CSS", "Node.js", "Scala", "Java"].each {|x| Skill.create(title: x)}
+Skill.all
+bundle exec rake db:migrate
+exit
+["HTML/CSS", "Node.js", "Scala", "Javascript", "Java"].each {|x| Skill.create(title: x)}
+exit
+Skill.new(title: "rails")
+q = Skill.new(title: "rails")
+q.save
+Skills.all
+Skill.all
+q2 = Skill.new(title: "javascript")
+q2.save
+Skill.all
+j = Job_skill.new(skill_id: 1, job_id: 1)
+j = Job_skill.new(skill_id: "1", job_id: "1")
+j = Job_skill.new
+j = JobSkill.new
+j = JobSkill.new(skill_id: "1", job_id: "1")
+j.save
+j2 = JobSkill.new(skill_id: "2", job_id: "2")
+j2.save
+JobSkill.all
+j.add(skill_id: "3")
+j.skill_id("3")
+j4 = JobSkill.new(skill_id: ["1", "2"], job_id: "3")
+j4 = JobSkill.new(skill_id: "1", job_id: "3")
+j4.save
+j5 = JobSkill.new(skill_id: "2", job_id: "3")
+j5.save
+JobSkill.all
+j6 = JobSkill.new(skill_id: "1", job_id: "2")
+j6.save
+j7 = JobSkill.new(skill_id: "2", job_id: "4")
+j7.save
+JobSkill.all
+t1 = TalentSkill.new(skill_id: "1", talent_id: "1")
+t1.save
+t2 = TalentSkill.new(skill_id: "2", talent_id: "1")
+t2.save
+t3 = TalentSkill.new(skill_id: "2", talent_id: "2")
+t3.save
+t3 = TalentSkill.new(skill_id: "2", talent_id: "3")
+t3.save
+TalentSkill.all
+t5 = TalentSkill.new(skill_id: "1", talent_id: "4")
+t5.save
+TalentSkill.all
+JobSkill.all
+Skill.all
+t6 = TalentSkill.new(skill_id: 1, talent_id: 5)
+t6.save
+t7 = TalentSkill.new(skill_id: 2, talent_id: 6)
+t7.save
+TalentSkill.all
+Skill.all
+TalentSkill(skill_id: "1")
+TalentSkill.fetch("1")
+TalentSkill.fetch(1)
+TalentSkill.fetch[1]
+TalentSkill.all
+TalentSkill.all
+JobSkill.all
+JobSkill.find(1)
+JobSkill.fetch(1)
+JobSkill.fetch(1)
+Skill.fetch(1)
+exit
+Skill.all
+JobSkill.all
+JobListing.new(title: "HooteSuite Developer", description: "get a job at hootesuite!", visible: true)
+JobListing.save
+jl = JobListing.new(title: "HooteSuite Developer", description: "get a job at hootesuite!", visible: true)
+jl.save
+jl2 = JobListing.new(title: "Mobio Developer", description: "get a job at mobio!", visible: true)
+jl2.save
+JobListing.all
+JobSkill.all
+jl3 = JobListing.new(title: "Vancouver Developer", description: "get a job in Vancouver!", visible: true)
+jl3.save
+JobListing.all
+Talent.all
+TalentSkill.all
+Company
+Talent.all
+t2 = Talent find 2
+t2 = Talent.find 2
+Skill.all
+t2.skills 
+jl
+jl.skills
+tl.skills
+t2.skills 
+JobListing.each do |x|  puts x end
+JobListing.each do |x|  puts x end
+jl
+TalentSkill.each do |x| x end
+@talent_skills = TalentSkill.all
+@talent_skills.each do |x| x end
+@talent_skills.each do |x| x.skill_id end
+@talent_skills.each do |x| puts x.skill_id end
+@talent_skills.each do |x| puts x.skill_id end
+@talent_skills.each do |x| x.skill_id  end
+@talent_skills.each do |x| x.skill_id  end
+@talent_skills.each do |x| puts x.skill_id end
+@job_skills = JobSkill.all
+@talent_skills.each do |x| @job_skills.each {|js| puts js.skill_id  } x.skill_id  end
+@talent_skills.each do |x| @job_skills.each {|js| puts js.skill_id  }end  x.skill_id  end
+@talent_skills.each do |x| @job_skills.each do |js| puts js.skill_id   x.skill_id  end
+@talent_skills.each do |x| @job_skills.each do |js| puts js.skill_id end  puts x.skill_id  end
+@talent_skills.each do |x| @job_skills.each do |js| put@talent_skills.each {|ts| puts ts.skill_id }s js.skill_id end  puts x.skill_id  end
+@talent_skills.each {|ts| puts ts.skill_id }
+@talent_skills.each {|ts| put ts.skill_id }
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@talent_skills.each {|ts| puts ts.skill_id }
+@talent_skills.each do |x| x end
+@talent_skills.each do |x| @job_skills.each do |js| put@talent_skills.each {|ts| puts ts.skill_id }s js.skill_id end  puts x.skill_id  end
+@talent_skills.each do |x| puts x.skill_id end
+@talent_skills.each do |x| x end
+@talent_skills.each do |x| puts x.skill_id end
+exit
+/exit
+@talent_skills.each do |x| puts x.skill_id end
+exit
+ASDF
+sd
+fas
+df end
+debugger
+--end
+exit
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}@job_skills.each{|js| puts js.skill_id}
+@job_skills.each{|js| puts js.skill_id}
+@talent_skills.each{|ts| puts ts.skill_id}
+@job_skills.each{|js| 
+  if js.skill_id == @talent_skills.skill_id
+  puts "It's a match!"
+  else
+  puts "not a match!"
+  end
+  }
+@job_skills.each{|js| 
+  if js.skill_id == @talent_skills.skill_id
+  puts "It's a match!"
+  else
+  puts "not a match!"
+  end}
+@job_skills.each{|js| 
+  if js.skill_id == TalentSkill.all.skill_id
+  puts "It's a match!"
+  else
+  puts "not a match!"
+  end}
+@job_skills.job_listing_id.each{|js| 
+  puts js
+  end}
+@job_skills.job_listing_id.each{|js| 
+  puts js}
+@job_skills_job_id = JobSkill.job_id
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@job_skills_job_id = JobSkill.job_id
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+@job_skills_job_id.each{|js| 
+  puts js}
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@job_skills_job_id = @job_skills.job_id
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+@job_skills_job_id.each{|js| puts js}
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@job_skills_job_id = JobSkill.job_listing_id
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+@job_skills_job_id.each{|js| puts js}
+@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@job_skills_job_id = JobSkill.all.job_listing_id
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+@job_skills_job_id.each{|js| puts js}
+@job_skills_job_id = JobSkill.all(job_listing_id)
+@job_skills_job_id.each{|js| puts js}@talent_skills = TalentSkill.all
+@job_skills = JobSkill.all
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+JobSkill.each{|js| puts js.skill_id }
+@job_skills.each{|js| puts js.skill_id}
+JobSkill.all.each{|js| puts js.skill_id }
+@job_skills.talent_id.each{|js| puts js.skill_id}
+@job_skills.talents.each{|js| puts js.skill_id}
+@job_skills.talent.each{|js| puts js.skill_id}
+@job_skills.talent.each
+@job_skills.talents.each
+JobListing.first
+jl.job_skills.all
+JobListing.find 3
+jl = Jo
+jl.job_skills.all
+@job_listing = JobListing.first
+x = JobListing.find(@job_listing)
+x.job_skills.all
+@job_listing = JobListing.find(3)
+x = JobListing.find(@job_listing)
+x.job_skills.all
+@job_listing = JobListing.find(3)
+job_skill_list = JobListing.find(@job_listing)
+job_skill_list.job_skills.all
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.each {|ji| puts ji.skill_id}
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.each{|ji| puts ji.skill_id}
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills
+\@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills = @j_skills
+@j_skills.each{|js| puts js.skill_id }
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills 
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills 
+@talent_listing = TalentListing.find(1)
+talent_id = TalentListing.find(@talent_listing)
+talent_id.talent_skills @talent_skills.each{|ts| puts ts.skill_id }
+@talent_listing = TalentListing.find(1)
+talent_id = TalentListing.find(@talent_listing)
+@job_listing = JobListing.find(3)
+job_id = JobListing.find(@job_listing)
+job_id.job_skills@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills 
+@job_listing = JobListing.find(3)
+@job_id = JobListing.find(@job_listing)
+@job_id.job_skills@talent_skills = TalentSkill.all
+JobListing.first
+@job_skills = JobSkill.all
+@talent_skills.each{|ts| puts ts.skill_id }
+@job_skills.talents.each
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills.each{|ts| puts ts.skill_id} 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills.each{|ts| puts ts.skills} 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills.each{|ts| puts ts.skills} 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills{|ts| puts ts.skills} 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills{|ts| puts ts.skill_id} 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills.count 
+@talent_skill = Talent.find(1)
+talent_id = Talent.find(@talent_skill)
+talent_id.talent_skills.length 
+@job_listing = JobListing.find(3)
+@job_id = JobListing.find(@job_listing)
+@job_id.job_skills
+@talent_skills.each{|ts| puts ts.skill_id }
+@talent_skills.Talent.find(1).each{|ts| puts ts.skill_id }
+@talent_skills = TalentSkill.find(1)
+@talent_skills.each{|ts| puts ts.skill_id }
+@talent_skills = TalentSkill.find(1)
+@talent_skills = TalentSkill.find(1)
+@talent_skills.each{|ts| puts ts.skill_id }
+JobListing.first
+@job_skills = JobSkill.all
+@job_skills.each{|js| puts js}
+@talent_skills = TalentSkill.find(1)
+@talent_skills.skill_id
+TalentSkill.find(1)
+@job_listing = JobListing.find(3)
+puts @job_listing.skill_ids
+@talent_listing = Talent.find(1)
+puts @talent_listing.skill_ids
+JobListing.all
+JobListing.find(3)
+@job_listing = JobListing.find(3)
+puts @job_listing.skill_ids
+@job_listing = JobListing.find(3)
+puts @job_listing.skill_ids
+@talent_listing = Talent.find(1)
+puts @talent_listing.skill_ids
+if @job_listing.skill_ids == @talent_listing.skill_ids
+  puts "match!"
+  else
+  puts "not a match!"
+end
+@all_talent = Talent.all
+@all_talent.each{|t| puts t.skill_ids }
+TalentSkills
+TalentSkills.all
+TalentSkils.all
+TalentSkill.all
+@job_listing.skill_ids
+Skill.all
+Skill.title
+@job_listing.skill_title
+@job_listing.skill_titles
+@job_listing.skill_id
+@job_listing.skill_ids
+s = Skill.find(2)
+s.title
+s2 = Skill.find(@job_listing.skill_ids)
+s2.title
+s2.titles
+s2.each do |x| puts x.title end
+s2.each do |x| puts x.title end
+s2 = Skill.find(@job_listing.skill_ids)
+@skills.each.map {|s| s.title}
+@skills.each.map {|s| s}
+Skill.index[1]
+Skill.all
+Skill.id(1)
+Skill.id[1]
+Skill.id("1")
+Skill.find("1")
+Skill.find("1").skills_id
+Skill.find("1").index
+Skill.find("1")
+Skill.find("1").title
+Skill.find("1").title
+talent.name
+@talents = Talent.all
+@talents.each do talent.skill_ids.count end
+@talents.each do talent.skill_ids end
+@talents.each do talent.first_name end
+exit
+Talent.all
+q = Talent.find(3)
+q.skill_id
+q.email
+User.all
+Talent.all
+User.full_name
+User.all
+User.find(1).full_name
+User.find(6).full_name
+exit
+Talent.all
+@talent = Talent.find(3)
+@talent.full_name
+Talent.find(nil)
+Talent.all(nil)
+Talent.all.nil
+Talent.all.user_id
+Talent.user_id
+exit
+exit
+Talent.all
+User.all
+JobSkills.all
+JobSkill.all
+TalentSkill.all
+q = User.find(4)
+q.add(skill_id: 1)
+b = User.find(4)
+b.talent.talentskills
+b.talent.talent
+b.talent.talent_skill
+b.talent.talent_skills
+b.talent.talent_skills
+b
+b.talent.talent_skills.skills
+b.talent.talent_skills.skills_ids
+b.talent.talent_skills.skill_ids
+b.talent.talent_skills
+b.talent.talent_skills.find 1
+b.talent.talent_skills(skill_id >> 1)
+b.talent.talent_skills(skill_id: 1)
+b.talent.talent_skills.find 1
+b.talent.talent_skills
+TalentSkill.all
+Skill.all
+skill = Skills.first
+skill = Skill.first
+b.talent.talent_skills << skill
+b.talent.talent_skills << skill
+clear
+b.talent.talent_skills = skill
+b = User.find (4)
+b.email
+b.email = "billygates@rich.com"
+b.talent.talent_skills
+b.talent.talent_skills.skill_ids
+b.talent.talent_skills.skill_id
+b.talent..skill_id
+b.talent.skill_id
+b.talent.talent_skills.skill_id
+b.talent.talent_skills.skills
+b.talent.talent_skills.title
+b.talent.talent_skills.new
+b.talent.talent_skills
+b.talent.talent_skills
+b.talent.talent_skills.skill_id
+b.talent.talent_skills.skill_ids
+skill
+b.talent.talent_skills.new(skill_id: 1)
+b.talent.talent_skills.new(skill_id: 2)
+b.talent.talent_skills.create(skill_id: 2)
+b.talent.talent_skills.create(skill_id: 1)
+b.talent.talent_skills.create(skill_id: 3)
+b.talent.talent_skills.create(skill_id: 1)
+b.talent.talent_skills
+b.talent.talent_skills
+b.talent.talent_skills.find_by_skill_id
+b.talent.talent_skills.find_by_skill_id(1).destroy\
+b.talent.talent_skills
+b.talent.talent_skills.find_by_skill_id(1).destroy
+b.talent.talent_skills
+b.talent.talent_skills.find_by_id(1).destroy
+b.talent.talent_skills
+b.talent.talent_skills.destroy
+b.talent.talent_skills
+TalentSkill.all
+b.talent.talent_skills
+TalentSkill.all
+b.skill_id
+q = Talent.find(1)
+q.skill_ids
+c = [1, 2, 3, 4, 5, 6]
+m = [2, 3, 5, 6, 7]
+c - m
+c
+n = [2, 3, 5, 6, 7, 8, 9, 10]
+c - n
+n = [2, "3", "five", 6, 7, 8, 9,]
+c - n
+a = ["cat","dog","sheep"]
+b = ["cat", "human"]
+a - b
+b = ["sheep", "cat"]
+a - b
+exit
+Talent.all
+Talent.find(1)
+Talent.find(6)
+User.all
+Admin.all
+TalentSkill.all
+JobListing.all
+Talent.all
+Skill.all
+TalentSkill.all
+Talent.all
+exit 
+Talent.all
+exit
+exit
+18.times { FactoryGirl.create(:comment)
+18.times { FactoryGirl.create(:comment)}
+18.times { FactoryGirl.create(:comment)}
+18.times { FactoryGirl.create(:comment)}
+exit
+nd
+18.times { FactoryGirl.create(:comment)}
+exit
+exit
+rspec spec/controllers/questions_controller_spec.rb
+rspec spec/controllers/questions_controller_spec.rb
+exit
+exit
+Delayed::Job.all
+exit
+User.all
+k = User.first
+k(is_admin: true)
+k.add(is_admin: true)
+User.first(is_admin: true)
+User.first[is_admin: true]
+k
+k(is_admin: true)
+k.is_admin?
+k.is_admin = true
+k.is_admin?
+exit
+100.times { Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000, end_date: ()))}
+100.times { Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000, end_date: ()))}
+100.times{ Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000, end_date: ()))}
+end
+100.times{ Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000, end_date: ()))}
+end
+100.times{ Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000), end_date:(Time.now+10.day) )}
+exit

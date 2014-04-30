@@ -1,18 +1,23 @@
 Rails.application.routes.draw do
-  resources :campaigns
+  resources :comments
 
-  get 'welcome/index'
+  resources :discussions
 
-  get "signup" => "users#new",            as: :signup
+  resources :campaigns do
+    patch :publish, on: :member
+  end
+
+  root 'welcome#index'
+
+  get "signup" => "users#new",           as: :signup
   get "login" => "sessions#new",         as: :login
   post "/login" => "sessions#create"
   delete "logout" => "sessions#destroy", as: :logout
 
 
   resources :users
-  #resources :sessions
+  resources :sessions
 
-  root "welcome#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

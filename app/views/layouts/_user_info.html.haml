@@ -1,5 +1,6 @@
 - if current_user
   = current_user.full_name
+  = link_to "My Campaigns", campaigns_path
   = link_to "logout", logout_path, class: "btn btn-danger", method: :delete
 - else
   = link_to "Login", "#", class: "btn btn-info", data: {toggle: "modal", target: "#signin-modal"}

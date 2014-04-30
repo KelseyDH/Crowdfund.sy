@@ -1,5 +1,11 @@
 class CampaignsController < ApplicationController
 
+  before_action :authenticate_user!, except: :show
+
+  def index
+    @campaigns = current_user.campaigns
+  end
+
   def new
     @campaign = Campaign.new
   end
@@ -15,6 +21,16 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
+  end
+
+  def publish
+    @campaign = Campaign.find(params[:id])
+    if @campaign.publish
+      redirect_to campaigns_path, notice: "Campaign published successfully!"
+    else
+    redirect_to campaigns_path, alert:  "Campaign publish failed: #{@campaign.errors.full_messages}"
+    end  
+
   end
 
   private
