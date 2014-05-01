@@ -813,3 +813,64 @@ end
 end
 100.times{ Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000), end_date:(Time.now+10.day) )}
 exit
+Orientation.all
+User.all
+User.all
+@orientation = Orientation.find(1)
+@orientation = Orientation.find(params[1])
+User.all
+User.first(school_id: 1)
+end
+User.all
+k
+Orientation.all
+School.all
+User.all
+k
+k = User.find[1]
+k = User.find(1)
+k
+k.school_id = 1
+School.all
+k
+School.all
+Orientation.all
+Mission.all
+Mission.orientation_id
+Missions.new(name: "Mission 1", description: "This is the first mission to tackle!"
+end
+Missions.new(name: "Mission 1", description: "This ifirst mission to tackle!"
+Missions.new(name: "Mission 1", description: "This ifirst mission to tackle!", orientatiid
+end
+end
+Missions.new(name: "Mission 1", description: "This ifirst mission to tackle!", orientation_id: 1)
+exit
+User.last
+User.last
+exit
+u = User.new
+u.save
+u.email = "kelseyh@gmail.com"
+u
+u.save
+m = Moderator.new
+m.save
+m.errors_full_messages
+m.errors.full_messages
+m.first_name = "kelsey"
+m.save
+m.errors.full_messages
+m.last_name = "hannan"
+m.first_name = "kelsey"
+m.save
+m
+m.email = "kelsey@kelsey.com"
+m.save
+User.last
+exit
+c
+c = Campaign.first
+c = Campaign.first
+c = Campaign.first
+exit
+exit

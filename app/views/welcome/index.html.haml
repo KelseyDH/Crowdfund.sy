@@ -3,7 +3,7 @@
 /
   - if current_user
     = current_user.full_name #note use of delegate here
-    = link_to "logout", logout_path, class: "btn btn-default", method: :delete
+    = link_to "logout", logout_path, class: "btn btn-default btn-sm", method: :delete
   - else
     /= link_to "Sign in", login_path, class: "btn btn-default"
     //Below would be used for multi-language support:

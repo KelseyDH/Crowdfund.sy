@@ -6,6 +6,8 @@ gem 'quiet_assets'
 gem 'bootstrap-sass'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'bcrypt', '~> 3.1.7'
+gem 'font-awesome-sass'
+
 
 gem 'will_paginate-bootstrap'
 gem 'state_machine'
@@ -18,6 +20,7 @@ group :development, :test do
   # gem "capybara-webkit"
   gem 'selenium-webdriver', '~> 2.41.0'
   gem "database_cleaner"
+  gem "interactive_editor"
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,0 +1,6 @@
+= simple_form_for [@commentable, @comment] do |f|
+  = f.input :body
+  = f.submit "Submit", class: "btn btn-primary"
+
+- @commentable.comments.each do |comment|
+  .well= comment.body

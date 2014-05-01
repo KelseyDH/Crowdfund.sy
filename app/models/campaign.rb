@@ -1,6 +1,8 @@
 class Campaign < ActiveRecord::Base
   belongs_to :user
 
+  has_many :comments, as: :commentable
+
   scope :published, -> {where(state: :published)}
 
   state_machine :state, initial: :draft do

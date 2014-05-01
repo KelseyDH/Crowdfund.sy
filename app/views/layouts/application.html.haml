@@ -7,12 +7,19 @@
     = csrf_meta_tags
   %body
     .container
-      .nav.nav-bar
-        .col-xs-6.col-md-6
-          %h1 Crowdfund.sy!
-        .col-xs-6.col-md-6
-          %br
-          .pull-right
+      .navbar-default.navbar-fixed-top
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#navbar-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .navbar-inner
+            .navbar.navbar-brand
+              %h4= link_to "Crowdfund.sy!", root_path
+        #navbar-collapse.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+
             #signin-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}= render "/layouts/signin_modal" unless current_user
             #user-info= render "layouts/user_info"
             (
@@ -21,5 +28,6 @@
             = link_to_unless_current "Spanish", locale: "es"
             )
       %hr
+      .pad60
       #flash-messages= flash_messages
       = yield

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   resources :comments
 
-  resources :discussions
+  resources :discussions do 
+    resources :comments
+    end
 
   resources :campaigns do
+    resources :comments
     patch :publish, on: :member
   end
 

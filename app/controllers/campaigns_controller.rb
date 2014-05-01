@@ -12,6 +12,7 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
+    @campaign.user = current_user
     if @campaign.save
       redirect_to root_path, notice: "Campaign created successsfully!"
     else
@@ -21,6 +22,8 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
+    @comment = Comment.new
+    @commentable = @campaign
   end
 
   def publish

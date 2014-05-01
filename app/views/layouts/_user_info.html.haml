@@ -1,7 +1,7 @@
 - if current_user
   = current_user.full_name
-  = link_to "My Campaigns", campaigns_path
-  = link_to "logout", logout_path, class: "btn btn-danger", method: :delete
+  = link_to "My Campaigns", campaigns_path, class: "btn btn-primary btn-sm"
+  = link_to "logout", logout_path, class: "btn btn-danger btn-xs", method: :delete
 - else
-  = link_to "Login", "#", class: "btn btn-info", data: {toggle: "modal", target: "#signin-modal"}
-  = link_to "Sign Up", signup_path, class: "btn btn-default"
+  = link_to "Login", "#", class: "btn btn-info btn-sm", data: {toggle: "modal", target: "#signin-modal"}
+  = link_to "Sign Up", signup_path, class: "btn btn-default btn-sm"

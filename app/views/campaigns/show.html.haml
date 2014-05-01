@@ -1,0 +1,10 @@
+%h1= @commentable.title
+%p= @commentable.details
+
+%div{class: label_class(@commentable.state)}
+  = @commentable.state.capitalize
+%hr
+
+
+= render "/comments/listing_with_new"
+
