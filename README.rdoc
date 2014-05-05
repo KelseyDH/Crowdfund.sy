@@ -1,13 +1,14 @@
-== Crowdfund.sy
+# Crowdfund.sy
 
 Crowdfund.sy is a crowd_funding Rails app that allows you to launch personal Kickstarter/Indiegogo crowdfunding projects.  This is a personal project, which I built to take my Ruby on Rails / AJax skills to the next level.
 
-<h3>Key Features include:</h3>
+##Key Features include:
 
 * Built with <b>Ruby on Rails</b>, using <b>PostGreSQL</b> database
 
-* Built-in <b>API access</b> to serve <b>JSON</b> content to external webpages, which can serve that content with AJAX.  **API token keys are registered to individual users, and calls have pagination limits. 
-**API was built following basic TDD, via <tt>rspec-rails</t>.
+* Built-in <b>API access</b> to serve <b>JSON</b> content to external webpages, which can serve that content with AJAX.
+  ** API token keys are registered to individual users, and calls have pagination limits. 
+  ** API was built following basic TDD, via <tt>rspec-rails</tt>.
 
 * Front-end: Javascript/jQuery written with <b>Coffeescript</b>.  HTML ERB replaced with HAML for nicer syntax.  Styled with a custom <b>Bootstrap</b> theme (yeti), with additional CSS support with <b>SASS</b>.  Icons are built with <b>Font-Awesome</b>.
 
