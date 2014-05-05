@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430203756) do
+ActiveRecord::Schema.define(version: 20140502202919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,13 @@ ActiveRecord::Schema.define(version: 20140430203756) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
+    t.string   "slug"
   end
 
+  add_index "campaigns", ["slug"], name: "index_campaigns_on_slug", using: :btree
   add_index "campaigns", ["state"], name: "index_campaigns_on_state", using: :btree
   add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id", using: :btree
 
@@ -60,6 +65,17 @@ ActiveRecord::Schema.define(version: 20140430203756) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "reward_levels", force: true do |t|
+    t.string   "title"
+    t.text     "details"
+    t.integer  "amount"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reward_levels", ["campaign_id"], name: "index_reward_levels_on_campaign_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"

@@ -12,16 +12,34 @@ gem 'font-awesome-sass'
 gem 'will_paginate-bootstrap'
 gem 'state_machine'
 
+#decorator:
+gem 'draper', '~> 1.3'
+
+#provides nice looking URLs:
+gem 'friendly_id', '~> 5.0.0'
+
+#mapping gems:
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
+gem 'virtus'
+
+
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
-  gem "factory_girl_rails"
+  #gem "factory_girl_rails"
   gem "capybara"
   # gem "capybara-webkit"
   gem 'selenium-webdriver', '~> 2.41.0'
   gem "database_cleaner"
   gem "interactive_editor"
 end
+
+gem "rspec-rails", group: :test
+gem "factory_girl_rails", group: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

@@ -29,6 +29,10 @@ module CrowdFunding
     #config.i18n.autoload_paths += Dir[Rails.root.join('app', 'validators', '*').to_s]
 
     # config.i18n.autoload_paths += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    
+    #For working in Rails Console
+    config.autoload_paths += Dir[Rails.root.join('app', 'validators', '*').to_s]
+    config.autoload_paths += Dir[Rails.root.join('app', 'services', '*').to_s]
 
     #Original:
     #config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]

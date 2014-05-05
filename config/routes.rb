@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
-  resources :comments
+  #get 'nearby_campaigns/index'
+
+  resources :nearby_campaigns, only: :index
+
+  namespace :api, defaults: {format: :json} do
+   
+    namespace :v1 do
+      resources :campaigns
+    end
+   
+    #api syntax that is same as namespace, but removes /v1/ from URL
+    # scope module: :v1 do
+    #   resources :campaigns
+    # end
+  end
+
+  #resources :comments
 
   resources :discussions do 
     resources :comments
@@ -14,7 +30,7 @@ Rails.application.routes.draw do
 
   get "signup" => "users#new",           as: :signup
   get "login" => "sessions#new",         as: :login
-  post "/login" => "sessions#create"
+  #post "/login" => "sessions#create"
   delete "logout" => "sessions#destroy", as: :logout
 
 

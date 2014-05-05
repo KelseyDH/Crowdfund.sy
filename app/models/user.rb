@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true, email_format: true
 
 
-  delegate :full_name, to: :profile
+  delegate :full_name, :address, to: :profile
 end

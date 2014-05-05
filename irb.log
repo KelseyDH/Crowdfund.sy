@@ -1,13 +1,3 @@
-exit
-q
-q.title
-q = Question.new
-q.title
-q.persisted?
-q.save
-q
-q.title = "hello world"
-q
 q.save
 q.new
 q.title = "not hello world"
@@ -873,4 +863,140 @@ c = Campaign.first
 c = Campaign.first
 c = Campaign.first
 exit
+exit
+c = Campaign.first
+c.draft?
+c.state == "draft"
+Campaign.update_all(state: :draft)
+c.draft?
+c = Campaign.first
+c.state == "draft"
+c.draft?
+c.published?
+c.publish
+c.published?
+c.complete
+c.expire
+c.cancel
+c.complete?
+c
+User.all
+c1 = Campaign.user.first
+c1 = Campaign.find(1)
+c1 = Campaign.find(2)
+c1 = Campaign.user_id(1)
+Campaign.user_id(1)
+Campaign.user_id
+c = Campaign.first
+c.user_id = 1
+c.draft?
+c.status
+c.state
+c2 = Campaign.find(2)
+c2.user_id = 1
+c2.state
+c2.publish
+c2.publish?
+c2.state
+c2.published?
+Campaign.update_all(state: :published)
+exit
+Campaign.find_each(&:save)
+Campaign.find_each(&:save)
+exit
+Campaign.find_each(&:save)
+exit
+my_array = [1,2,3,4]
+method_name = :length
+my_array.send(method_name)
+@campaign = Campaign.first
+@campaign = Campaign.first
+association = :reward_levels
+@campaign.send(association)
+@campaign.save
+@campaign
+@campaign.reward_levels
+@campaign.reward_level
+exity
+exit
+Campaign.find_each(&:save)
+exit
+exit
+User.all
+user = User.first
+Stage.all
+@stage = Stage.first
+@stage.question
+Question.all
+@stage.all
+@stage.questions
+@stage.questions.answers
+@stage.questions.answer
+@stage.questions.all
+@stage.questions.answers
+@stage.questions(1)
+@stage.questions[1]
+@stage.questions[1].answers
+@stage.questions[1].answers("Cafeteria")
+@stage.questions[1].answers.find("Cafeteria")
+@stage.questions[1].answers.fetch("Cafeteria")
+@stage.questions[1].answers.fetch["Cafeteria"]
+@stage.questions[1].answers["Cafeteria"]
+@stage.questions[1].answers("Cafeteria")
+@stage.questions[1].answers(1)
+@stage.questions[1].answers[1]
+@stage.questions[1].answers[1].correct?
+@stage.questions[1].answers[1]
+@stage.questions[0].answers[1]
+@stage.questions[0].answers
+@stage.questions[0].answers[0]
+@stage.questions[0].answers[0].correct?
+user.stage
+user
+UserStage.all
+UserStage.empty?
+User.all
+Stage.all
+user
+us1 = UserMission.new(user_id: 1, mission_id: 1)
+us1 = UserMission.new(user_id: 1, mission_id: 1, available: true)
+us1.save
+UserMission.all
+Stage.all
+us1 = UserStage.new(user_id: 1, stage_id: 1)
+us1 = UserStage.new(user_id: 1, stage_id: 1)
+us1.save
+us1
+us1 = um1
+um1 = us1
+um1
+um1.save
+usone = UserStage.new(stage_id: 1, user_id: 1)
+exi
+exit
+user
+user = User.first
+User.has_finished_stage?
+Question.all
+user
+Stage.questions[1].answers[1]
+Stage.all
+Stage.questions
+Question.all
+Question.answers
+Question.all
+q = Question.first
+q.answers
+user.userstage
+UserStage.all
+q.answers
+q.answers[2]
+q.answers[2].correct?
+Stage.questions[1].answers[1]
+answer = Stage.first.questions[1].answers[1]
+answer = Stage.first.questions[1].answers[1].correct?
+answer = Stage.first.questions[1].answers[1].correct?
+"quiz".pluralize
+exit
+y
 exit

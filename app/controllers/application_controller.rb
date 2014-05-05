@@ -5,8 +5,17 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  #after_filter works in Rails 3, is now becoming deprecated in favour of acter_action
+  after_action :set_access_controller_headers
+
 
   private
+
+  #gets around browser issue that blocks JSON from external URL
+  def set_access_controller_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Request-Method'] = '*'
+  end
 
   #helps prevent cluttering the controller with instance variables
   def current_user

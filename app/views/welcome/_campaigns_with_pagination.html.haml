@@ -1,5 +1,6 @@
 .container{style: "position:relative;"}
   - @campaigns.each do |c|
+    -# campaign_dec = campaign.decorate
     .col-lg-3.col-md-3.col-sm-4.col-xs-6
       .profile-well
         %h4= c.title
@@ -12,3 +13,4 @@
 
 /NOTE for using Faker to populate data, following can be used in Rails C:
 / 100.times{ Campaign.create(title: Faker::Company.bs, details: Faker::Lorem.paragraph, target: rand(1000000), end_date:(Time.now+10.day) )}
+
