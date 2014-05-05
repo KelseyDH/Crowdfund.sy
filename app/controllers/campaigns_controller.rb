@@ -39,13 +39,12 @@ class CampaignsController < ApplicationController
 
   def show
     # @campaign = Campaign.find(params[:id])
-    # @comment = Comment.new
-    # @commentable = @campaign
 
     #@campaign = Campaign.friendly.find(params[:id]).decorate
     @campaign = Campaign.friendly.find(params[:id])
-    @comment = Comment.new
     @commentable = @campaign
+    @comment = Comment.new
+
 
     respond_to do |format|
       format.html { render :show }

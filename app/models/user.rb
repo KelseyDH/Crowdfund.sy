@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :campaigns
 
+  has_one :api_key
+
   accepts_nested_attributes_for :profile
 
 
@@ -12,4 +14,14 @@ class User < ActiveRecord::Base
 
 
   delegate :full_name, :address, to: :profile
+
+  before_create :generate_api_key
+
+  private
+
+  def generate_api_key
+    self.api_key = ApiKey.new
+
+  end
+
 end

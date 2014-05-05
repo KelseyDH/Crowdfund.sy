@@ -2,12 +2,15 @@
 
 %p
   %b Title:
-  = @commentable.title
+  =# @commentable.title
+  = @discussion.title
 %p
   %b Body:
-  = @commentable.body
+  =# @commentable.body
+  = @discussion.body
 
-= link_to 'Edit', edit_discussion_path(@commentable)
+=# link_to 'Edit', edit_discussion_path(@commentable)
+= link_to 'Edit', edit_discussion_path(@discussion)
 \|
 = link_to 'Back', discussions_path
 

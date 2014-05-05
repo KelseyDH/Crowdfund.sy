@@ -28,8 +28,12 @@ module ApplicationHelper
     end
   end
 
-
+  #Note on link_to_add_fields parameters:
+  #name         => Label of button
+  # f           => form object
+  # association => nested_attributes e.g. reward_levels
   def link_to_add_fields(name, f, association)
+
     new_object  = f.object.send(association).new
     id          = new_object.object_id
 

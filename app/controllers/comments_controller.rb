@@ -3,11 +3,12 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    # @campaign = Campaign.find(params[:campaign_id])
+    #@campaign = Campaign.find(params[:campaign_id])
     @comment = @commentable.comments.new(comment_params)
 
     if @comment.save
       redirect_to @commentable, notice: "Comment Created"
+      #redirect_to @campaign, notice: "Comment created!"
     else
       render "/#{@commentable.class.name.underscore.pluralize}/show"
       #render "/campaigns/show"
@@ -21,8 +22,8 @@ class CommentsController < ApplicationController
   end
 
   def find_commentable
-    #resource, id = request.path.split("/")[1, 2]
-    #@commentable = resource.singularize.classify.constantize.find(id.to_i)
+    resource, id = request.path.split("/")[1, 2]
+    @commentable = resource.singularize.classify.constantize.find(id.to_i)
     if params[:campaign_id]
       @commentable = Campaign.find(params[:campaign_id])
     elsif params[:discussion_id]

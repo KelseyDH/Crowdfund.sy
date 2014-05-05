@@ -1,5 +1,3 @@
-q.save
-q.new
 q.title = "not hello world"
 q
 q.save
@@ -998,5 +996,24 @@ answer = Stage.first.questions[1].answers[1].correct?
 answer = Stage.first.questions[1].answers[1].correct?
 "quiz".pluralize
 exit
+y
+exit
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+SecureRandom.hex
+User.last
+User.first
+ApiKey.first
+u = User.last
+u.api_key
+rspec spec/
+end
+ApiKey.first.access_token
 y
 exit
