@@ -1,28 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Crowd_funding is a Rails built app that you can use to create your own personal crowdfunding platform.  The project is a personal project of mine to improve both my Ruby on Rails / AJax skills.
 
-Things you may want to cover:
+Key Features include:
 
-* Ruby version
+* Built with <b>Ruby on Rails</b>, using <b>PostGreSQL</b> database
 
-* System dependencies
+* <b>API access with pre-configured JSON</b> to serve content to external apps through mechanisms such as AJAX.  API token keys are registered to individual users, and calls have pagination limits. API is supported with applicable <tt>rspec-rails</t> tests.
 
-* Configuration
+* Front-end: Javascript/jQuery written with <b>Coffeescript</b>.  HTML ERB replaced with HAML for nicer syntax.  Styled with a custom <b>Bootstrap</b> theme (yeti), with additional CSS support with <b>SASS</b>.  Icons are built with <b>Font-Awesome</b>.
 
-* Database creation
+* Full user Robust project publishing features with <tt>StateMachine</tt> integration.
 
-* Database initialization
+* Built in geocoding support using <b>Google Maps</b> to list crowdfunding campaigns close to a nearby user, via <tt>geocoder</tt> and <tt>gmaps4rails</tt>
 
-* How to run the test suite
+* Service object support with <tt>Virtus</tt> gem.  Decorator objects built with integration of <tt>draper</tt> gem.
 
-* Services (job queues, cache servers, search engines, etc.)
+* Human-readable URL's due to integration with <tt>FriendlyID</tt> gem.
 
-* Deployment instructions
+* Basic global language support via Rails Locales, current languages include English and Spanish.
 
-* ...
+* Coming soon:  <b>Stripe integration!</b>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
