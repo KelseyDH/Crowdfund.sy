@@ -4,12 +4,16 @@
 $ ->
   return if typeof Stripe == "undefined"
   Stripe.setPublishableKey($("meta[name='stripe-key')").attr("content"))
-
+  
+  #$(document).on "Submit", "#new_order", ->
+  #replaced with above due to turbolink problem in DOM: 
   $("#new_order").on "Submit", ->
+    
     #disable on true disables form after input
     $("input[type=submit]").attr("disabled", true)
-    processCard()
-    false
+    if $("#order_card_number").length
+      processCard()
+      false
 
 processCard = -> 
   
@@ -21,7 +25,7 @@ processCard = ->
     expYear: $("#order_card_year_1i").val()
 
 
-  Stripe.createToken(card, response_handleStripeResponse)
+  Stripe.createToken(card, handleStripeResponse)
 
 handleStripeResponse= (status, response)->
   alert(status)

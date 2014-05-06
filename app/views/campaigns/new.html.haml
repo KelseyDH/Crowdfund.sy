@@ -1,5 +1,5 @@
 - if @campaign.errors.has_key?(:base)
-  .alert.alert-danger= @campaign.errors[:base].join(", ")
+  .alert.alert-danger.alert-dismissable= @campaign.errors[:base].join(", ")
 
 = simple_form_for @campaign, html: {class: "form-horizontal"} do |f|
   = f.input :title

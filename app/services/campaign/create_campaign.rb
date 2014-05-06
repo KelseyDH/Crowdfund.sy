@@ -8,7 +8,7 @@ class Campaign::CreateCampaign
 
 
   def call
-    @campaign = user.campaign.new(params)
+    @campaign = user.campaigns.new(params)
     @campaign.save
   end
 

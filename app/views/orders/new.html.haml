@@ -3,14 +3,34 @@
 / Note on simple form: [@a, @b] is used for the ROUTE
 / of the form: e.g. reward_level/:id/order/:id looking at Type
 
-= simple_form_for [@reward_level, @order] do |f|
-  /=#Won't work: f.input :card_number
-  /=# text_field_tag :card_number
-  = f.input :stripe_card_token, as: :hidden
-  = f.input :cvc
-  = f.input :card_number
-  = f.input :card_month, as: :date, order: [:month]
-  = f.input :card_year, as: :date, order: [:year], start_year: Date.today.year, end_year: Date.today.year + 8
-  /^simple form attributes to show a form based on style of input
+#stripe-error
 
-  = f.submit "Pledge Money!", class: "btn btn-primary", data: {disable_with: "Submitting..."}
+- if @order.errors[:base]
+  .alert.alert-danger= @order.errors[:base].join(", ")
+
+- if current_user.stripe_customer_id
+  =# simple_form_for [@reward_level, @order], html: {id: "existing_card"} do |f|
+
+  = simple_form_for [@reward_level, @order] do |f|
+
+    -# f.input :stripe_card_token, as: :hidden, input_html: {value: ""}
+    -#Replaced by Order Controller line: 
+     /#token = params[:order] ? params[:order][:stripe_card_token] : ""
+
+    .well
+      = current_user.stripe_card_type
+      **** **** **** #{current_user.stripe_card_last4}
+      = f.submit "Charge this Card", class: "btn btn-primary"
+- else
+
+  = simple_form_for [@reward_level, @order] do |f|
+    /=#Won't work: f.input :card_number
+    /=# text_field_tag :card_number
+    = f.input :stripe_card_token, as: :hidden
+    = f.input :cvc
+    = f.input :card_number
+    = f.input :card_month, as: :date, order: [:month]
+    = f.input :card_year, as: :date, order: [:year], start_year: Date.today.year, end_year: Date.today.year + 8
+    /^simple form attributes to show a form based on style of input
+
+    = f.submit "Pledge Money!", class: "btn btn-primary", data: {disable_with: "Submitting..."}
