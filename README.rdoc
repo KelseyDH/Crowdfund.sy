@@ -4,11 +4,13 @@ Crowdfund.sy is a crowd_funding Rails app that allows you to launch personal Kic
 
 ## Key Features include:
 
+version 0.09 (May 5):
+
 * Built with <b>Ruby on Rails</b>, using <b>PostGreSQL</b> database
 
 * Built-in <b>API access</b> to serve <b>JSON</b> content to external webpages, which can serve that content with AJAX.
-  ** API token keys are registered to individual users, and calls have pagination limits. 
-  ** API was built following basic TDD, via <tt>rspec-rails</tt>.
+** API token keys are registered to individual users, and calls have pagination limits. 
+** API was built following basic TDD, via <tt>rspec-rails</tt>.
 
 * Front-end: Javascript/jQuery written with <b>Coffeescript</b>.  HTML ERB replaced with HAML for nicer syntax.  Styled with a custom <b>Bootstrap</b> theme (yeti), with additional CSS support with <b>SASS</b>.  Icons are built with <b>Font-Awesome</b>.
 
@@ -22,7 +24,8 @@ Crowdfund.sy is a crowd_funding Rails app that allows you to launch personal Kic
 
 * Basic global language support via Rails Locales, current languages include English and Spanish.
 
-* Coming soon:  <b>Stripe integration!</b>
+version 0.10 (May 6): 
 
+* Now added:  <b>Stripe integration!</b>  Implemented using the <tt>Stripe</tt> ruby gem and Stripe's Javascript API.  Customer tokens can be saved to allow for multiple recurring payments.
 
-
+* Major bug fixes
