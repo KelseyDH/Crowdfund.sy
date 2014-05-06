@@ -1,18 +1,24 @@
 class Campaign < ActiveRecord::Base
   belongs_to :user
 
-  has_many :comments, as: :commentable
-  has_many :reward_levels, dependent: :destroy
-  accepts_nested_attributes_for :reward_levels, allow_destroy: true,
-    reject_if: proc {|x| x[:amount].blank? && x[:title].blank? && x[:details].blank?}
+  validates_presence_of :title, :details, :target, :end_date
+
+  geocoded_by :address
+  after_validation :geocode
 
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  scope :published, -> {where(state: :published)}
 
-  geocoded_by :address
-  after_validation :geocode
+  serialize :details
+
+  has_many :comments, as: :commentable
+  has_many :reward_levels, dependent: :destroy
+  
+  accepts_nested_attributes_for :reward_levels, allow_destroy: true,
+    reject_if: proc {|x| x[:amount].blank? && x[:title].blank? && x[:details].blank?}
+
+  scope :published, -> {where(state: :published)}
 
   state_machine :state, initial: :draft do
 

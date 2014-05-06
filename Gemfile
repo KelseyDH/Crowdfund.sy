@@ -25,7 +25,8 @@ gem 'underscore-rails'
 
 gem 'virtus'
 
-
+#stripe gem for payments
+gem 'stripe'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -38,7 +39,7 @@ group :development, :test do
   gem "interactive_editor"
 end
 
-gem "rspec-rails", group: :test
+#gem "rspec-rails", group: :test
 gem "factory_girl_rails", group: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

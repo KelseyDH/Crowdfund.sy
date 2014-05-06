@@ -28,3 +28,9 @@ $ ->
   $(document).on "click", ".remove-reward-level", ->
     $(@).parents("fieldset").fadeOut(1000)
     $(@).parents("fieldset").find("input[type=hidden]").val("1")
+
+  $(document).on "click", ".add_fields", ->
+    time = new Date().getTime()
+    regex = new RegExp($(@).data("id"), "g")
+    $(@).before($(@).data("fields").replace(regex, time))
+    false

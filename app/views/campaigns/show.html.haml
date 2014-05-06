@@ -1,19 +1,26 @@
-%h1= @commentable.title
-%p= @commentable.details
-
-%div{class: label_class(@commentable.state)}
-  = @commentable.state.capitalize
-%hr
+.col-md-9.col-sm-9
+  %h1= @commentable.title
+  %p= @commentable.details
 
 
-= render "/comments/listing_with_new"
+  /#%div{class: label_class(@commentable.state)}
+  %div{class: @commentable.label_class}
+    =# @commentable.state.capitalize
+    = @commentable.state
+  %hr
 
-/ .col-md-3.col-sm-3
-/   - @campaign.reward_levels.each do |reward_level|
-/     .well
-/     %h4= reward_level.title
-/     %h5 $ #{reward_level.amount}
-/     %p= reward_level.details
+  = render "/comments/listing_with_new"
+
+.col-md-3.col-sm-3
+  = @campaign.reward_levels.each do |reward_level|
+    .well
+    %h4
+      = reward_level.title
+    %h5
+      = "$ #{reward_level.amount}"
+    %p
+      = reward_level.details
+    = link_to "Pledge", new_reward_level_order_path(reward_level), class: "btn btn-primary"
 
 /old view
 / - c = @campaign

@@ -7,10 +7,11 @@
   = f.input :target
   = f.input :address
   = f.input :end_date
-  = f.submit "Submit", class: "btn btn-primary"
 
   = f.fields_for :reward_levels do |rl|
     = render "reward_level_fields", f: rl
+
+  = link_to_add_fields("Add Reward Level", f, :reward_levels)
   
   = f.submit "Submit", class: "btn btn-default"
 / above replaces:

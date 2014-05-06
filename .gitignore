@@ -13,6 +13,11 @@
 
 /config/database.yml
 
+#contains Stripe token
+/config/initializers/keys_for_stripe.rb
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+

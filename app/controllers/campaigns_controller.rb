@@ -12,8 +12,10 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new(campaign_params)
     
+
+    #@campaign = Campaign.new(campaign_params)
+
     #SERVICE OBJECT:
     service = Campaign::CreateCampaign.new(params: campaign_params,
                                           user: current_user)
@@ -24,7 +26,7 @@ class CampaignsController < ApplicationController
       redirect_to service.campaign, notice: "Campaign created successsfully!"
     else
       @campaign = service.campaign
-      #(3 - @campaign.reward_levels.length).times {@campaign.reward_levels.build}
+      (3 - @campaign.reward_levels.length).times { @campaign.reward_levels.build }
       render :new
     end
 
@@ -40,16 +42,16 @@ class CampaignsController < ApplicationController
   def show
     # @campaign = Campaign.find(params[:id])
 
-    #@campaign = Campaign.friendly.find(params[:id]).decorate
-    @campaign = Campaign.friendly.find(params[:id])
+    @campaign = Campaign.friendly.find(params[:id]).decorate
+    #@campaign = Campaign.friendly.find(params[:id])
     @commentable = @campaign
     @comment = Comment.new
 
 
-    respond_to do |format|
-      format.html { render :show }
-      format.js { render :show }
-    end
+    # respond_to do |format|
+    #   format.html { render :show }
+    #   format.js { render :show }
+    # end
   end
 
   def publish
@@ -69,9 +71,9 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:title, :details, 
+    params.require(:campaign).permit(:title, :details, :address,
                                     :target, :end_date, 
-                                    {reward_levels_attributes: [:title, :details, :amount]})
+          {reward_levels_attributes: [:title, :details, :amount, :_destroy, :id]})
   end
 
 end

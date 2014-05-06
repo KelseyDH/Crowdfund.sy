@@ -6,6 +6,6 @@
       = c.state.capitalize
     - if c.draft?
       = button_to "Publish", publish_campaign_path(c), class: "btn btn-success", method: :patch
-      %p= link_to "View", c, class: "btn btn-primary"
-      /#Older Ajax version:
-      /#%p= link_to "View", c, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#{campaign-view}"}
+      /%%p= link_to "View", c, class: "btn btn-primary"
+      /#Ajax version:
+      %p= link_to "View", c, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#{campaign-view}"}

@@ -1,7 +1,8 @@
 module ApplicationHelper
 
-  #def formatted_date(date)
-  #end
+  def formatted_date(date)
+    date.strftime("%Y-%B-%d")
+  end
 
 
   #Nicer way of displaying error messages, hiding them away from application layout in view
@@ -22,12 +23,6 @@ module ApplicationHelper
   end
 
 
-  def generate_gmap4rails_markers(objects)
-    Gmap4rails.build_markers(objects) do |campaign, marker|
-      object.decorate.gen_marker(marker)
-    end
-  end
-
   #Note on link_to_add_fields parameters:
   #name         => Label of button
   # f           => form object
@@ -37,11 +32,27 @@ module ApplicationHelper
     new_object  = f.object.send(association).new
     id          = new_object.object_id
 
-    # f.fields_for :reward_levels
+    #f.fields_for :reward_levels
     fields = f.fields_for(association, new_object, child_index: id) do |rl|
       render(association.to_s.singularize + "_fields", f: rl)
     end
-    link_to(name, "javascript:void(0)", class: "add_fields", data: {id: id, field: fields.gsub("\n", "")})
+    link_to(name, "javascript:void(0)", class: "btn btn-primary add_fields",
+             data: {id: id, field: fields.gsub("\n", "")})
   end
+
+    #My notes:
+  # def generate_gmap4rails_markers(objects)
+  #   Gmap4rails.build_markers(objects) do |campaign, marker|
+  #     object.decorate.gen_marker(marker)
+  #   end
+  # end
+
+
+  def generate_gmap4rails_markers(objects)
+    Gmaps4rails.build_markers(@users) do |object, maker|
+      object.decorate.gen_marker(marker)
+    end
+  end
+
 
 end

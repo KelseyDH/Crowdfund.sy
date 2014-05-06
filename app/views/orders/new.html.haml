@@ -1,0 +1,16 @@
+%h1 Please #{@reward_level.amount} for #{@reward_level.campaign_title}
+
+/ Note on simple form: [@a, @b] is used for the ROUTE
+/ of the form: e.g. reward_level/:id/order/:id looking at Type
+
+= simple_form_for [@reward_level, @order] do |f|
+  /=#Won't work: f.input :card_number
+  /=# text_field_tag :card_number
+  = f.input :stripe_card_token, as: :hidden
+  = f.input :cvc
+  = f.input :card_number
+  = f.input :card_month, as: :date, order: [:month]
+  = f.input :card_year, as: :date, order: [:year], start_year: Date.today.year, end_year: Date.today.year + 8
+  /^simple form attributes to show a form based on style of input
+
+  = f.submit "Pledge Money!", class: "btn btn-primary", data: {disable_with: "Submitting..."}
