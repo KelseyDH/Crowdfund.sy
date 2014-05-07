@@ -30,7 +30,6 @@
               = link_to "Nearby Campaigns", nearby_campaigns_path
         #navbar-collapse.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
-            #signin-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}= render "/layouts/signin_modal" unless current_user
             #user-info= render "layouts/user_info"
             (
             = link_to_unless_current "English", locale: "en"
@@ -41,3 +40,4 @@
       .pad60
       #flash-messages= flash_messages
       = yield
+      #signin-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}= render "/layouts/signin_modal" unless current_user

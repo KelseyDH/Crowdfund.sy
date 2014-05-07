@@ -1,4 +1,7 @@
 //#Language support in rails:
 es:
-  hello: "hola"
-  signin: "Inicio de sesión"
+  greetings:
+    hello: "hola"
+  buttons:
+    signin: "registrarse"
+    signup: "contratar"

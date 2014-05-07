@@ -10,8 +10,14 @@
     = link_to t("buttons.signin"), login_path, class: "btn btn-default"
     = link_to "Sign up", signup_path, class: "btn btn-default"
 
-= link_to "New Campaign", new_campaign_path, class: "btn btn-primary"
-  %span.glyphicon.glyphicon-search
+
+
+
+= link_to content_tag(:h4, 'Create Campaign', class: "glyphicon glyphicon-plus"),
+  new_campaign_path,
+  class: "btn-lg btn-primary",
+  method: :get,
+  data: { confirm: "Create new Account?" }
 
 %br
 .pad10

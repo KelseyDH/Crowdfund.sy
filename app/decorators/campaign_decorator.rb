@@ -31,7 +31,7 @@ class CampaignDecorator < Draper::Decorator
   def gen_marker(marker)
     marker.lat object.latitude
     marker.lng object.longitude
-    marker.infowindow object.title
+    link = h.link_to object.title, object
     info = "#{link}<br>#{short_details}"
     marker.infowindow info
   end

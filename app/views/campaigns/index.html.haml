@@ -1,11 +1,13 @@
+%h2 My Campaigns
+
 - @campaigns.each do |c|
   .well
-    %h4= c.title
+    %h4= link_to "#{c.title}", c, class: "fa-fa-open"
     %p= c.details.truncate(50)
+    .pad10
     %div{class: label_class(c.state)}
       = c.state.capitalize
+    .pad10
     - if c.draft?
-      = button_to "Publish", publish_campaign_path(c), class: "btn btn-success", method: :patch
-      /%%p= link_to "View", c, class: "btn btn-primary"
-      /#Ajax version:
-      %p= link_to "View", c, class: "btn btn-primary", remote: true, data: {toggle: "modal", target: "#campaign-view"}
+      = button_to "Publish", publish_campaign_path(c), class: "btn-md btn-success fa-fa-rocket", method: :patch
+      %p=# link_to "View", c, class: "btn btn-primary", data: {toggle: "modal", target: "#campaign-view"}, remote: true

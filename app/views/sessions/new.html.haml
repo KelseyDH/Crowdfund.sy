@@ -1,11 +1,12 @@
 %h1 Sign In
 
-= simple_form_for "", url: login_path, html: {class: "form-horizontal"} do |f|
+= simple_form_for "", url: sessions_path, html: {class: "form-horizontal"} do |f|
   = f.input :email
   = f.input :password
-  = f.submit "login", class: "btn btn-default"
+  = f.submit "Sign In", class: "btn btn-default"
 
 %br
 
-%p Don't have an account?
-= link_to "Sign up", signup_path
+%p 
+  Don't have an account?
+  = link_to "Sign up", signup_path

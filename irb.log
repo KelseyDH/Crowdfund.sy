@@ -1,29 +1,3 @@
-q4.update_attributes(title: "cdefg")
-q4.update_attribute(title: "cdefg")
-q4.update_attributes(title: "cdefg")
-q4.save
-reload!
-Hirb.enable
-hirb.enable
-exit
-Question.all
-Question.select(:id, :title, :description).limit(2)
-Question.select(:id, :title, :description)
-q4 = Question.new
-q4 = Question.new(title: "kelsey", description: "I am awesome.")
-q4.save
-Question.list
-Question.all
-Question.select(:id, :title, :description).limit(2).offset(2)
-Question.all
-reload!
-Question.all
-exit
-Question.all
-Question.where(title: "abc")
-Question.where.not(title: "abc")
-Question.where(["title like ?", "%fas%"])
-q8 = Question.new(title: "fasasdbfasdlfjke")
 q8.save
 q8 = Question.new(title: "fasasdbfasdlfjke", description: "I am greaaaat")
 q8.save
@@ -1021,4 +995,12 @@ user1.address = "89 west pender vancouver bc"
 user1.address
 user1.address = "89 west pender vancouver bc"
 user1.address = "89 west pender"
+exit
+y
+exit 
+User.all
+u = User.first
+u.address
+u
+y
 exit

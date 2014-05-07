@@ -1,17 +1,21 @@
+%h2 Campaigns within 1000 miles of you
+
 %div{style: "width: 800px"}
   #map{style: "width: 800px; height: 400px;"}
 
 -# markers = Gmaps4rails.build_markers(@nearby_campaigns) {|campaign, marker| campaign.decorate.gen_marker(marker)}
-- markers = @hash = Gmaps4rails.build_markers(@users) {|campaign, marker| campaign.decorate.gen_marker(marker)}
+-# markers = @hash = Gmaps4rails.build_markers(@users) {|campaign, marker| campaign.decorate.gen_marker(marker)}
 
--# markers = generate_gmap4rails.nearby_campaigns
+
+- markers = generate_gmap4rails_markers(@nearby_campaigns)
 
 :javascript
   $(document).ready(function(){
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, 
-    function(){markers = handler.addMarkers(#{markers.to_json});
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
+    function(){
+      markers = handler.addMarkers(#{markers.to_json});
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
   });
-});

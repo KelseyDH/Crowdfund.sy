@@ -49,7 +49,7 @@ module ApplicationHelper
 
 
   def generate_gmap4rails_markers(objects)
-    Gmaps4rails.build_markers(@users) do |object, maker|
+    Gmaps4rails.build_markers(objects) do |object, marker|
       object.decorate.gen_marker(marker)
     end
   end

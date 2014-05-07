@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   return if typeof Stripe == "undefined"
-  Stripe.setPublishableKey($("meta[name='stripe-key')").attr("content"))
+  Stripe.setPublishableKey($("meta[name='stripe-key']").attr("content"))
   
   #$(document).on "Submit", "#new_order", ->
   #replaced with above due to turbolink problem in DOM: 
